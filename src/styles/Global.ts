@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   outline: none;
+
 }
 
 body{
@@ -24,5 +25,16 @@ button{
   cursor: pointer;
   text-decoration: none;
 }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
 
 `

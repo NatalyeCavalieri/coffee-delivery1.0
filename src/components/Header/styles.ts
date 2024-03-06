@@ -7,6 +7,9 @@ export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.colors["base-background"]};
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
 
   > div {
     display: flex;
