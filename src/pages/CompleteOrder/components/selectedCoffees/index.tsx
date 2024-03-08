@@ -1,16 +1,20 @@
-import { TitleText } from "../../../../components/Typography";
-import { CoffeeCartCard } from "../CoffeeCartCard/CoffeeCartCard";
-import { DetailsContainer, SelectedCoffeesContainer } from "./styles";
+import { TitleText } from "../../../../components/Typography"
+import { CoffeeCartCard } from "../CoffeeCartCard/CoffeeCartCard"
+import { ConfirmationSection } from "./confirmationSection"
+import { DetailsContainer, SelectedCoffeesContainer } from "./styles"
 
-export function SelectedCoffees(){
+export function SelectedCoffees() {
   return (
     <SelectedCoffeesContainer>
       <TitleText size="xs" color="subtitle">
         Cafés selecionados
       </TitleText>
+
       <DetailsContainer>
         <CoffeeCartCard />
         <CoffeeCartCard />
+
+        <ConfirmationSection />
       </DetailsContainer>
     </SelectedCoffeesContainer>
   )
