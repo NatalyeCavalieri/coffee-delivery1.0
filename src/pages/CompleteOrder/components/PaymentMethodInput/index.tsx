@@ -1,16 +1,21 @@
-import { ReactNode } from "react";
-import { PaymentMethodInputContainer } from "./styles";
+import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
+import { ContentContainer, PaymentMethodInputContainer } from "./styles";
 
-interface PaymentMethodInputProps{
-icon: ReactNode
-text: string
+type PaymentMethodInputProps = InputHTMLAttributes<HTMLInputElement> & {
+  icon: ReactNode
+  label: string
 }
 
-export function PaymentMethodInput({ icon, text }: PaymentMethodInputProps) {
+export const PaymentMethodInput = forwardRef<HTMLInputElement, PaymentMethodInputProps>(({id, icon, label, ...props}, ref)=> {
   return (
-    <PaymentMethodInputContainer> 
-      {icon}
-      {text}
-      </PaymentMethodInputContainer>
+    <PaymentMethodInputContainer>
+      <input id={id} type="radio" {...props} name="paymentMethod" ref={ref} />
+      <label htmlFor={id}>
+        <ContentContainer>
+          {icon}
+          {label}
+        </ContentContainer>
+      </label>
+    </PaymentMethodInputContainer>
   )
-}
+})
